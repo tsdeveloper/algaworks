@@ -1,0 +1,14 @@
+{
+  "name": "cobranca",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:tsdeveloper/algaworks.git",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.8.4",
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "bootstrap-datepicker": "^1.8.0"
+  }
+}

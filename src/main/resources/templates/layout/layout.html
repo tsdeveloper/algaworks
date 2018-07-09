@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Cadastro de Título</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/layout/stylesheets/fontawesome-all.min.css}"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/bootstrap-datepicker.standalone.min.css"/>
+
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+<div class="container-fluid">
+
+<header layout:include="header/header"></header>
+    <div class="container">
+        <br />
+
+        <th:block layout:fragment="conteudo"/>
+
+    </div>
+
+    <!--<th:block layout:fragments="script">-->
+        <!--<script th:src="@{/js/jquery.min.js}"/>-->
+        <!--<script th:src="@{/js/bootstrap.min.js}"/>-->
+
+    <!--</th:block>-->
+
+
+</div>
+
+
+    <th:block layout:replace="fragments/body_scripts :: end"/>
+    <th:block layout:fragment="custom_scripts"/>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "cobranca",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Thyago Developer <ts.analista@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/tsdeveloper/algaworks",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-maskmoney": "^3.0.2",
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1"
+  }
+}
