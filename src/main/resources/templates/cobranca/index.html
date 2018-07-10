@@ -45,22 +45,28 @@
                 <tbody>
 
 
-                <tr th:each="titulo : ${ tituloListas }" >
+                <tr th:each="titulo : ${ tituloListas }">
                     <td scope="row" th:text="${ titulo.codigo }"></td>
                     <td th:text="${ titulo.descricao}"></td>
                     <td th:text="|R$ ${{ titulo.valor }}|"></td>
                     <td th:text="${{ titulo.dataVencimento }}"></td>
                     <td>
                         <span th:text="${ titulo.status.descricao}"
-                              th:classappend="${titulo.pendente ? 'badge badge-warning' : 'badge badge-success'}" ></span>
+                              th:classappend="${titulo.pendente ? 'badge badge-warning' : 'badge badge-success'}"></span>
                     </td>
 
                     <td>
                         <a th:href="@{/titulos/editar/{codigo}(codigo=${titulo.codigo})}"
-                           class="btn btn-primary">Editar</a>
+                           class="btn btn-outline-primary"><i class="far fa-edit fa-1x"></i></a>
+
                         <a data-toggle="modal" data-target="#modal-tituloconfirmacao-delete"
                            th:attr="data-codigo=${titulo.codigo}, data-descricao=${titulo.descricao}"
-                           class="btn btn-danger">Excluir</a>
+                           class="btn btn-outline-danger"><i class="far fa-trash-alt fa-1x"></i></a>
+
+                        <a th:if="${titulo.pendente}"
+                           data-toggle="modal" data-target="#modal-tituloconfirmacao-delete"
+                           th:attr="data-codigo=${titulo.codigo}, data-descricao=${titulo.descricao}"
+                           class="btn btn-outline-success"><i class="fas fa-check fa-1x"></i></a>
                     </td>
 
                 </tr>
