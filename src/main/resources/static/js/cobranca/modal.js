@@ -4,7 +4,7 @@ $('.datepicker').datepicker({
     startDate: '-3d'
 });
 
-$('#modal-delete').on('shown.bs.modal', function (e) {
+$('#modal-tituloconfirmacao-delete').on('shown.bs.modal', function (e) {
 
     var button = $(e.relatedTarget);
 

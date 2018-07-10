@@ -53,8 +53,11 @@
                     </td>
 
                     <td>
-                        <a href="" class="btn btn-primary">Editar</a>
-                        <a href="" class="btn btn-danger">Excluir</a>
+                        <a th:href="@{/titulos/editar/{codigo}(codigo=${titulo.codigo})}"
+                           class="btn btn-primary">Editar</a>
+                        <a data-toggle="modal" data-target="#modal-tituloconfirmacao-delete"
+                           th:attr="data-codigo=${titulo.codigo}, data-descricao=${titulo.descricao}"
+                           class="btn btn-danger">Excluir</a>
                     </td>
 
                 </tr>
@@ -76,6 +79,7 @@
 
         </div>
     </div>
+    <div layout:include="cobranca/delete"></div>
 
 </section>
 </html>
