@@ -26,12 +26,9 @@
 
                 <form action="/titulos" method="post" th:object="${titulo}">
 
-                    <div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
-                        <div th:each="detailedError : ${#fields.detailedErrors()}">
-                            <span   th:text="${detailedError.message}"></span>
-                        </div>
+                    <div layout:include="fragments/_success"></div>
+                    <div layout:include="fragments/_error"></div>
 
-                    </div>
                     <div class="row has-e">
                         <div class="col-6">
                             <div class="form-group" th:classappend="${#fields.hasErrors('descricao')} ? 'has-error'">
@@ -43,7 +40,11 @@
                         <div class="col-2">
                         <div class="form-group">
                             <label for="dataVencimento">Data de Vencimento</label>
-                            <input name="dataVencimento" type="text" class="form-control" id="dataVencimento" aria-describedby="vencHelp" placeholder="Vencimento" />
+                            <input name="dataVencimento" type="text" class="form-control" id="dataVencimento"
+                                   data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-language="pt-BR"
+                                   data-date-autoclose="true"
+                                   data-date-today-highlight="true" data-date-orientation="bottom"
+                                   aria-describedby="vencHelp" placeholder="Vencimento"/>
                             <small id="venccHelp" class="form-text text-muted">Campo obrigatório.</small>
                         </div>
                         </div>
